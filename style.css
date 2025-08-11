@@ -1,17 +1,22 @@
+/* Фонт ба үндсэн тохиргоо */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
+/* Толгой хэсэг */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #333;
+  background: linear-gradient(90deg, #005f73, #0a9396);
   color: #fff;
-  padding: 10px;
+  padding: 10px 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
 header .logo {
@@ -20,67 +25,46 @@ header .logo {
 }
 
 header .logo img {
-  width: 40px;
+  width: 45px;
   margin-right: 10px;
+  border-radius: 50%;
 }
 
+header h1 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+/* Навигацийн холбоосууд */
 nav {
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: #ffd700;
 }
 
 nav a.active {
-  border-bottom: 2px solid yellow;
+  border-bottom: 2px solid #ffd700;
+  padding-bottom: 2px;
 }
 
+/* Menu toggle товч (mobile) */
 #menu-toggle {
   display: none;
   cursor: pointer;
+  font-size: 1.5rem;
 }
 
-.destinations-list {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-}
-
-.destination img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.social-icons a {
-  color: white;
-  margin: 0 5px;
-}
-
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  margin-top: 20px;
-}
-
-@media (max-width: 600px) {
-  nav {
-    display: none;
-    flex-direction: column;
-  }
-  nav.show {
-    display: flex;
-  }
-  #menu-toggle {
-    display: block;
-  }
-}
-/* Хэл солих toggle контейнер */
+/* Хэл солих toggle */
 #lang-switch {
   display: inline-flex;
   background: #1a1a1a;
@@ -91,7 +75,6 @@ footer {
   box-shadow: 0 4px 14px rgba(0,0,0,0.5);
 }
 
-/* Toggle товч */
 #lang-switch button {
   appearance: none;
   border: none;
@@ -105,7 +88,6 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Идэвхтэй тал */
 #lang-switch button.active {
   background: linear-gradient(90deg,#222, #111);
   color: #ffd700;
@@ -115,6 +97,88 @@ footer {
 
 #lang-switch button:hover {
   color: #fff;
+}
+
+/* Аяллын газрын жагсаалт */
+.destinations-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.destination {
+  flex: 1 1 calc(33% - 20px);
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.destination:hover {
+  transform: translateY(-5px);
+}
+
+.destination img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.destination h3 {
+  padding: 10px;
+  margin: 0;
+  background: #0a9396;
+  color: #fff;
+}
+
+.destination p {
+  padding: 0 10px 10px;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 5px;
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .destination {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #0a9396;
+    padding: 10px;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  .destination {
+    flex: 1 1 100%;
+  }
 }
 
 @media (max-width: 480px) {
