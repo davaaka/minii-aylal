@@ -3,77 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Монголын Байгаль</title>
+  <title data-lang-text='{"mn": "Монгол аялал", "en": "Mongolia Travel"}'>Монгол аялал</title>
   <link rel="stylesheet" href="style.css">
-  <script src="menu.js" defer></script>
 </head>
 <body>
 
-<header>
-  <div class="logo">
-    <img src="images/logo.png" alt="Logo">
-    <h1 id="site-title">Монголын Байгаль</h1>
-  </div>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+      <h1 data-lang-text='{"mn": "Монгол аялал", "en": "Mongolia Travel"}'>Монгол аялал</h1>
+    </div>
 
-  <!-- Хэл солих toggle -->
-  <div id="lang-switch">
-    <button id="btn-mn" class="active">MN</button>
-    <button id="btn-en">EN</button>
-  </div>
+    <!-- Language Switch -->
+    <div id="lang-switch">
+      <button id="btn-mn" class="active">MN</button>
+      <button id="btn-en">EN</button>
+    </div>
 
-  <div id="menu-toggle">☰</div>
-  <nav>
-    <a href="index.html" class="active" data-mn="Нүүр" data-en="Home">Нүүр</a>
-    <a href="destinations.html" data-mn="Очих газрууд" data-en="Destinations">Очих газрууд</a>
-    <a href="contact.html" data-mn="Холбоо барих" data-en="Contact">Холбоо барих</a>
-  </nav>
-</header>
+    <!-- Menu -->
+    <div id="menu-toggle">☰</div>
+    <nav>
+      <a href="index.html" class="active" data-lang-text='{"mn": "Нүүр", "en": "Home"}'>Нүүр</a>
+      <a href="destinations.html" data-lang-text='{"mn": "Очих газрууд", "en": "Destinations"}'>Очих газрууд</a>
+      <a href="contact.html" data-lang-text='{"mn": "Холбоо барих", "en": "Contact"}'>Холбоо барих</a>
+    </nav>
+  </header>
 
-<section class="hero">
-  <h2 data-mn="Монголын гайхамшигт байгальд тавтай морил!" data-en="Welcome to the beauty of Mongolia!">
-    Монголын гайхамшигт байгальд тавтай морил!
-  </h2>
-  <p data-mn="Эндээс та Монгол орны үзэсгэлэнт газруудтай танилцах боломжтой." 
-     data-en="Here you can explore the most beautiful places in Mongolia.">
-     Эндээс та Монгол орны үзэсгэлэнт газруудтай танилцах боломжтой.
-  </p>
-</section>
-
-<section class="destinations-list">
-  <div class="destination">
-    <img src="images/husvgul.jpg" alt="Хөвсгөл нуур">
-    <h3 data-mn="Хөвсгөл нуур" data-en="Lake Khövsgöl">Хөвсгөл нуур</h3>
-    <p data-mn="Монголын Швейцарь хэмээх гайхамшигт нуур." 
-       data-en="Known as the Switzerland of Mongolia, a stunning freshwater lake.">
-       Монголын Швейцарь хэмээх гайхамшигт нуур.
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2 data-lang-text='{"mn": "Монгол орны үзэсгэлэнт байгаль таныг урьж байна", "en": "Mongolia's beautiful nature invites you"}'>
+      Монгол орны үзэсгэлэнт байгаль таныг урьж байна
+    </h2>
+    <p data-lang-text='{"mn": "Манай аяллын хөтөлбөрүүдээр таныг мартагдашгүй дурсамжтай болгоно.", "en": "Our travel programs will give you unforgettable memories."}'>
+      Манай аяллын хөтөлбөрүүдээр таныг мартагдашгүй дурсамжтай болгоно.
     </p>
-  </div>
+    <a href="destinations.html" class="btn" data-lang-text='{"mn": "Дэлгэрэнгүй үзэх", "en": "See more"}'>Дэлгэрэнгүй үзэх</a>
+  </section>
 
-  <div class="destination">
-    <img src="images/gobi.jpg" alt="Говь цөл">
-    <h3 data-mn="Говь цөл" data-en="Gobi Desert">Говь цөл</h3>
-    <p data-mn="Эрс тэс уур амьсгалтай, гайхалтай элсэн манхан." 
-       data-en="A harsh but beautiful desert with vast sand dunes.">
-       Эрс тэс уур амьсгалтай, гайхалтай элсэн манхан.
-    </p>
-  </div>
+  <!-- Features -->
+  <section class="features">
+    <div class="feature">
+      <h3 data-lang-text='{"mn": "Туршлагатай хөтөч", "en": "Experienced Guides"}'>Туршлагатай хөтөч</h3>
+      <p data-lang-text='{"mn": "Мэргэжлийн хөтөч таны аяллыг аюулгүй, тав тухтай болгоно.", "en": "Professional guides ensure your trip is safe and comfortable."}'>
+        Мэргэжлийн хөтөч таны аяллыг аюулгүй, тав тухтай болгоно.
+      </p>
+    </div>
+    <div class="feature">
+      <h3 data-lang-text='{"mn": "Өвөрмөц соёл", "en": "Unique Culture"}'>Өвөрмөц соёл</h3>
+      <p data-lang-text='{"mn": "Монголын нүүдэлчдийн өвөрмөц уламжлалыг мэдрээрэй.", "en": "Experience the unique traditions of Mongolian nomads."}'>
+        Монголын нүүдэлчдийн өвөрмөц уламжлалыг мэдрээрэй.
+      </p>
+    </div>
+    <div class="feature">
+      <h3 data-lang-text='{"mn": "Байгалийн гайхамшиг", "en": "Natural Wonders"}'>Байгалийн гайхамшиг</h3>
+      <p data-lang-text='{"mn": "Дэлхийд ховор үзэсгэлэнт газруудыг үзээрэй.", "en": "Discover rare natural beauties of the world."}'>
+        Дэлхийд ховор үзэсгэлэнт газруудыг үзээрэй.
+      </p>
+    </div>
+  </section>
 
-  <div class="destination">
-    <img src="images/terelj.jpg" alt="Тэрэлж">
-    <h3 data-mn="Тэрэлж" data-en="Terelj National Park">Тэрэлж</h3>
-    <p data-mn="Улаанбаатараас холгүй, байгалийн үзэсгэлэнт цогцолбор." 
-       data-en="A national park near Ulaanbaatar with breathtaking scenery.">
-       Улаанбаатараас холгүй, байгалийн үзэсгэлэнт цогцолбор.
-    </p>
-  </div>
-</section>
+  <!-- Footer -->
+  <footer>
+    <div class="social-icons">
+      <a href="#">🌐</a>
+      <a href="#">📘</a>
+      <a href="#">📸</a>
+    </div>
+    <p data-lang-text='{"mn": "© 2025 Монгол аялал", "en": "© 2025 Mongolia Travel"}'>© 2025 Монгол аялал</p>
+  </footer>
 
-<footer>
-  <p data-mn="&copy; 2025 Монголын Байгаль. Бүх эрх хуулиар хамгаалагдсан." 
-     data-en="&copy; 2025 Mongolia Nature. All rights reserved.">
-     &copy; 2025 Монголын Байгаль. Бүх эрх хуулиар хамгаалагдсан.
-  </p>
-</footer>
-
+  <script src="menu.js"></script>
 </body>
 </html>
