@@ -1,41 +1,59 @@
-/* Фонт ба үндсэн тохиргоо */
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+/* Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
   line-height: 1.6;
   background-color: #f9f9f9;
   color: #333;
 }
 
-/* Толгой хэсэг */
+/* Header */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(90deg, #005f73, #0a9396);
-  color: #fff;
+  background: #0277bd;
+  color: white;
   padding: 10px 20px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 header .logo {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 header .logo img {
-  width: 45px;
-  margin-right: 10px;
-  border-radius: 50%;
+  height: 40px;
 }
 
-header h1 {
-  font-size: 1.4rem;
-  margin: 0;
+#lang-switch button {
+  background: white;
+  color: #0277bd;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-/* Навигацийн холбоосууд */
+#lang-switch button.active {
+  background: #ff9800;
+  color: white;
+}
+
+#menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 nav {
   display: flex;
   gap: 15px;
@@ -44,146 +62,78 @@ nav {
 nav a {
   color: white;
   text-decoration: none;
-  font-weight: 500;
-  transition: 0.2s;
+  padding: 5px 10px;
 }
 
-nav a:hover {
-  color: #ffd700;
+nav a.active, nav a:hover {
+  background: #ff9800;
+  border-radius: 5px;
 }
 
-nav a.active {
-  border-bottom: 2px solid #ffd700;
-  padding-bottom: 2px;
-}
-
-/* Menu toggle товч (mobile) */
-#menu-toggle {
-  display: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-}
-
-/* Хэл солих toggle */
-#lang-switch {
-  display: inline-flex;
-  background: #1a1a1a;
-  border-radius: 999px;
-  padding: 4px;
-  gap: 4px;
-  align-items: center;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.5);
-}
-
-#lang-switch button {
-  appearance: none;
-  border: none;
-  background: transparent;
-  color: #cfcfcf;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 160ms ease;
-  font-size: 0.9rem;
-}
-
-#lang-switch button.active {
-  background: linear-gradient(90deg,#222, #111);
-  color: #ffd700;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.6), inset 0 -2px 0 rgba(0,0,0,0.2);
-  transform: translateY(-1px);
-}
-
-#lang-switch button:hover {
-  color: #fff;
-}
-
-/* Аяллын газрын жагсаалт */
-.destinations-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-}
-
-.destination {
-  flex: 1 1 calc(33% - 20px);
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.destination:hover {
-  transform: translateY(-5px);
-}
-
-.destination img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.destination h3 {
-  padding: 10px;
-  margin: 0;
-  background: #0a9396;
-  color: #fff;
-}
-
-.destination p {
-  padding: 0 10px 10px;
-  font-size: 0.95rem;
-}
-
-/* Footer */
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 20px;
-}
-
-.social-icons a {
-  color: white;
-  margin: 0 5px;
-  font-size: 1.2rem;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .destination {
-    flex: 1 1 calc(50% - 20px);
+/* Mobile Menu */
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block;
   }
-}
 
-@media (max-width: 600px) {
   nav {
     display: none;
     flex-direction: column;
-    background: #0a9396;
-    padding: 10px;
+    background: #0277bd;
+    width: 100%;
   }
 
   nav.show {
     display: flex;
   }
-
-  #menu-toggle {
-    display: block;
-  }
-
-  .destination {
-    flex: 1 1 100%;
-  }
 }
 
-@media (max-width: 480px) {
-  #lang-switch button {
-    padding: 6px 8px;
-    font-size: 0.85rem;
-  }
+/* Sections */
+section {
+  padding: 20px;
+}
+
+h2 {
+  color: #0277bd;
+  margin-bottom: 10px;
+}
+
+/* Destinations */
+.destination-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.destination-item {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.destination-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.destination-item h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.destination-item p {
+  padding: 0 10px 10px;
+  color: #666;
+}
+
+/* Footer */
+footer {
+  background: #0277bd;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
 }
