@@ -1,56 +1,55 @@
-// 📌 Menu toggle — Mobile menu нээх/хаах
-const menuToggle = document.getElementById("menu-toggle");
-if (menuToggle) {
-  menuToggle.addEventListener("click", () => {
-    document.querySelector("nav").classList.toggle("show");
-  });
-}
+// Menu toggle товч дарахад mobile меню нээгдэж/хаагдана
+document.getElementById("menu-toggle").addEventListener("click", () => {
+  document.querySelector("nav").classList.toggle("show");
+});
 
-// 📌 Хэл солих товчлуурууд
+// Хэл солих товчлуурууд
 const langButtons = document.querySelectorAll("#lang-switch button");
 
-if (langButtons.length > 0) {
-  langButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      // Active class солих
-      langButtons.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
+langButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // Active class солих
+    langButtons.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
 
-      // Хэл солих
-      const lang = btn.dataset.lang;
-      localStorage.setItem("siteLang", lang); // сонголтыг хадгалах
-      changeLanguage(lang);
-    });
+    // Хэл солих логик
+    const lang = btn.dataset.lang;
+    changeLanguage(lang);
   });
-}
+});
 
-// 📌 Хэл солих функц
+// Хэл солих функц
 function changeLanguage(lang) {
-  const elements = document.querySelectorAll("[data-lang-text]");
-  elements.forEach((el) => {
-    const textData = el.dataset.langText;
-    if (textData) {
-      try {
-        const parsed = JSON.parse(textData);
-        if (parsed[lang]) {
-          el.textContent = parsed[lang];
-        }
-      } catch (err) {
-        console.warn("⚠ Хэлний текстийн формат буруу байна:", el);
-      }
+  // Энгийн текст солих
+  const textElements = document.querySelectorAll("[data-mn], [data-en]");
+  textElements.forEach((el) => {
+    if (lang === "mn" && el.dataset.mn) {
+      el.textContent = el.dataset.mn;
+    } else if (lang === "en" && el.dataset.en) {
+      el.textContent = el.dataset.en;
+    }
+  });
+
+  // Placeholder солих
+  const placeholders = document.querySelectorAll("[data-mn-placeholder], [data-en-placeholder]");
+  placeholders.forEach((el) => {
+    if (lang === "mn" && el.dataset.mnPlaceholder) {
+      el.placeholder = el.dataset.mnPlaceholder;
+    } else if (lang === "en" && el.dataset.enPlaceholder) {
+      el.placeholder = el.dataset.enPlaceholder;
+    }
+  });
+
+  // Textarea доторх анхны текст солих
+  const textareas = document.querySelectorAll("[data-mn-value], [data-en-value]");
+  textareas.forEach((el) => {
+    if (lang === "mn" && el.dataset.mnValue) {
+      el.value = el.dataset.mnValue;
+    } else if (lang === "en" && el.dataset.enValue) {
+      el.value = el.dataset.enValue;
     }
   });
 }
 
-// 📌 Ачаалах үед хадгалсан хэл сэргээх
-const savedLang = localStorage.getItem("siteLang") || "mn";
-changeLanguage(savedLang);
-
-// Сонгосон хэл дээр active class тавих
-if (langButtons.length > 0) {
-  langButtons.forEach((b) => {
-    if (b.dataset.lang === savedLang) {
-      b.classList.add("active");
-    }
-  });
-}
+// Default хэл — Монгол
+changeLanguage("mn");
