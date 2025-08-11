@@ -20,20 +20,20 @@ langButtons.forEach((btn) => {
 
 // Хэл солих функц
 function changeLanguage(lang) {
-  // Энгийн текст солих
-  const textElements = document.querySelectorAll("[data-mn]");
+  // Текст солих
+  const textElements = document.querySelectorAll("[data-mn], [data-en]");
   textElements.forEach((el) => {
-    const mnText = el.getAttribute("data-mn");
-    const enText = el.getAttribute("data-en");
-    el.textContent = lang === "mn" ? mnText : enText;
+    if (el.dataset[lang]) {
+      el.textContent = el.dataset[lang];
+    }
   });
 
-  // Placeholder солих (input, textarea)
-  const placeholderElements = document.querySelectorAll("[data-mn-placeholder]");
-  placeholderElements.forEach((el) => {
-    const mnPh = el.getAttribute("data-mn-placeholder");
-    const enPh = el.getAttribute("data-en-placeholder");
-    el.setAttribute("placeholder", lang === "mn" ? mnPh : enPh);
+  // Placeholder солих
+  const placeholders = document.querySelectorAll("[data-mn-placeholder], [data-en-placeholder]");
+  placeholders.forEach((el) => {
+    if (el.dataset[`${lang}Placeholder`]) {
+      el.placeholder = el.dataset[`${lang}Placeholder`];
+    }
   });
 }
 
