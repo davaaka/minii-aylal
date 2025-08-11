@@ -1,45 +1,38 @@
-// menu.js - Mobile цэс нээх/хаах код
-const toggle = document.getElementById('menu-toggle');
-const nav = document.getElementById('nav');
-
-toggle.addEventListener('click', () => {
-  nav.classList.toggle('show');
+// Menu toggle товч дарахад mobile меню нээгдэж/хаагдана
+document.getElementById("menu-toggle").addEventListener("click", () => {
+  document.querySelector("nav").classList.toggle("show");
 });
-// ---------------------------
-// Хэл солих toggle код
-// ---------------------------
-(function() {
-  const mnBtn = document.getElementById('lang-mn');
-  const enBtn = document.getElementById('lang-en');
 
-  // localStorage эсвэл browser default
-  const saved = localStorage.getItem('site-lang');
-  const defaultLang = saved || (navigator.language && navigator.language.startsWith('en') ? 'en' : 'mn');
+// Хэл солих товчлуурууд
+const langButtons = document.querySelectorAll("#lang-switch button");
 
-  function applyLanguage(lang) {
-    if (lang === 'mn') {
-      mnBtn.classList.add('active');
-      mnBtn.setAttribute('aria-selected', 'true');
-      enBtn.classList.remove('active');
-      enBtn.setAttribute('aria-selected', 'false');
-    } else {
-      enBtn.classList.add('active');
-      enBtn.setAttribute('aria-selected', 'true');
-      mnBtn.classList.remove('active');
-      mnBtn.setAttribute('aria-selected', 'false');
+langButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // Active class солих
+    langButtons.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    // Хэл солих логик
+    const lang = btn.dataset.lang;
+    changeLanguage(lang);
+  });
+});
+
+// Хэл солих функц
+function changeLanguage(lang) {
+  const elements = document.querySelectorAll("[data-lang-text]");
+  elements.forEach((el) => {
+    const textData = el.dataset.langText;
+    if (textData) {
+      try {
+        const parsed = JSON.parse(textData);
+        el.textContent = parsed[lang] || el.textContent;
+      } catch (err) {
+        console.error("Текстийн хэлний мэдээлэл буруу байна:", err);
+      }
     }
+  });
+}
 
-    // Бүх текст солих
-    document.querySelectorAll('[data-mn]').forEach(el => {
-      const value = el.getAttribute(`data-${lang}`);
-      if (value !== null) el.textContent = value;
-    });
-
-    localStorage.setItem('site-lang', lang);
-  }
-
-  mnBtn.addEventListener('click', () => applyLanguage('mn'));
-  enBtn.addEventListener('click', () => applyLanguage('en'));
-
-  applyLanguage(defaultLang);
-})();
+// Default хэл — Монгол
+changeLanguage("mn");
