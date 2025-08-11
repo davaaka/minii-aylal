@@ -3,64 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-mn="Холбоо барих" data-en="Contact">Холбоо барих</title>
+  <title data-mn="Холбоо барих" data-en="Contact Us">Холбоо барих</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Header -->
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="Logo">
-      <h1 data-mn="Монгол аялал" data-en="Mongolia Travel">Монгол аялал</h1>
-    </div>
-
-    <!-- Language Switch -->
-    <div id="lang-switch">
-      <button id="btn-mn" class="active" data-lang="mn">MN</button>
-      <button id="btn-en" data-lang="en">EN</button>
-    </div>
-
-    <!-- Menu -->
-    <div id="menu-toggle">☰</div>
+    <button id="menu-toggle">☰</button>
     <nav>
-      <a href="index.html" data-mn="Нүүр" data-en="Home">Нүүр</a>
-      <a href="destinations.html" data-mn="Очих газрууд" data-en="Destinations">Очих газрууд</a>
-      <a href="contact.html" class="active" data-mn="Холбоо барих" data-en="Contact">Холбоо барих</a>
+      <ul>
+        <li><a href="index.html" data-mn="Нүүр" data-en="Home">Нүүр</a></li>
+        <li><a href="destinations.html" data-mn="Аяллын чиглэлүүд" data-en="Destinations">Аяллын чиглэлүүд</a></li>
+        <li><a href="contact.html" class="active" data-mn="Холбоо барих" data-en="Contact">Холбоо барих</a></li>
+      </ul>
     </nav>
+
+    <div id="lang-switch">
+      <button data-lang="mn" class="active">MN</button>
+      <button data-lang="en">EN</button>
+    </div>
   </header>
 
-  <!-- Contact Section -->
-  <section class="contact">
-    <h2 data-mn="Холбоо барих" data-en="Contact Us">Холбоо барих</h2>
-    <p data-mn="Асуулт, санал хүсэлт байвал бидэнтэй холбогдоорой."
-       data-en="If you have any questions or feedback, feel free to contact us.">
-      Асуулт, санал хүсэлт байвал бидэнтэй холбогдоорой.
-    </p>
+  <main>
+    <section>
+      <h1 data-mn="Бидэнтэй холбогдох" data-en="Get in Touch">Бидэнтэй холбогдох</h1>
+      <p data-mn="Асуулт, санал байвал доорх маягтыг бөглөнө үү."
+         data-en="If you have any questions or suggestions, please fill out the form below.">
+         Асуулт, санал байвал доорх маягтыг бөглөнө үү.
+      </p>
 
-    <form>
-      <label data-mn="Нэр" data-en="Name">Нэр</label>
-      <input type="text" placeholder="Нэрээ оруулна уу" data-mn="Нэрээ оруулна уу" data-en="Enter your name">
+      <form>
+        <label data-mn="Таны нэр" data-en="Your Name">Таны нэр</label>
+        <input type="text" 
+               data-mn-placeholder="Нэрээ оруулна уу" 
+               data-en-placeholder="Enter your name">
 
-      <label data-mn="Имэйл" data-en="Email">Имэйл</label>
-      <input type="email" placeholder="Имэйлээ оруулна уу" data-mn="Имэйлээ оруулна уу" data-en="Enter your email">
+        <label data-mn="Таны и-мэйл" data-en="Your Email">Таны и-мэйл</label>
+        <input type="email" 
+               data-mn-placeholder="И-мэйлээ оруулна уу" 
+               data-en-placeholder="Enter your email">
 
-      <label data-mn="Мессеж" data-en="Message">Мессеж</label>
-      <textarea placeholder="Мессежээ бичнэ үү" data-mn="Мессежээ бичнэ үү" data-en="Write your message"></textarea>
+        <label data-mn="Таны мессеж" data-en="Your Message">Таны мессеж</label>
+        <textarea rows="5"
+                  data-mn-placeholder="Мессежээ бичнэ үү" 
+                  data-en-placeholder="Write your message"></textarea>
 
-      <button type="submit" data-mn="Илгээх" data-en="Send">Илгээх</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="social-icons">
-      <a href="#">🌐</a>
-      <a href="#">📘</a>
-      <a href="#">📸</a>
-    </div>
-    <p data-mn="© 2025 Монгол аялал" data-en="© 2025 Mongolia Travel">© 2025 Монгол аялал</p>
-  </footer>
+        <button type="submit" 
+                data-mn="Илгээх" 
+                data-en="Send">Илгээх</button>
+      </form>
+    </section>
+  </main>
 
   <script src="menu.js"></script>
 </body>
