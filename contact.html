@@ -1,49 +1,59 @@
 <!DOCTYPE html>
 <html lang="mn">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Холбоо барих - Миний Аялал</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Холбоо барих - Монгол аялал</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Globe_icon.svg/1024px-Globe_icon.svg.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <div class="logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Globe_icon.svg/1024px-Globe_icon.svg.png" alt="Лого">
-      <h1>Миний Аялал</h1>
+      <img src="logo.png" alt="Logo">
+      <h1 id="site-title">Монгол аялал</h1>
     </div>
-    <nav id="nav">
-      <a href="index.html">Нүүр</a>
-      <a href="destinations.html">Очих газрууд</a>
-      <a href="contact.html" class="active">Холбоо барих</a>
+
+    <!-- Language Switch -->
+    <div id="lang-switch">
+      <button id="btn-mn" class="active">MN</button>
+      <button id="btn-en">EN</button>
+    </div>
+
+    <!-- Menu -->
+    <div id="menu-toggle">☰</div>
+    <nav>
+      <a href="index.html" data-mn="Нүүр" data-en="Home">Нүүр</a>
+      <a href="destinations.html" data-mn="Очих газрууд" data-en="Destinations">Очих газрууд</a>
+      <a href="contact.html" class="active" data-mn="Холбоо барих" data-en="Contact">Холбоо барих</a>
     </nav>
-    <div id="menu-toggle" aria-label="Цэс">☰</div>
   </header>
 
-  <main>
-    <h2>Холбоо барих</h2>
+  <!-- Main Content -->
+  <section class="contact-form">
+    <h2 data-mn="Холбоо барих" data-en="Contact Us">Холбоо барих</h2>
+    <p data-mn="Бидэнтэй холбоо барихын тулд доорх маягтыг бөглөнө үү."
+       data-en="Please fill out the form below to get in touch with us.">
+      Бидэнтэй холбоо барихын тулд доорх маягтыг бөглөнө үү.
+    </p>
+
     <form>
-      <label>Нэр:</label>
-      <input type="text" name="name" required>
-      <label>И-мэйл:</label>
-      <input type="email" name="email" required>
-      <label>Зурвас:</label>
-      <textarea name="message" required></textarea>
-      <button type="submit">Илгээх</button>
+      <label data-mn="Нэр" data-en="Name">Нэр</label>
+      <input type="text" name="name" placeholder="Таны нэр">
+
+      <label data-mn="Имэйл" data-en="Email">Имэйл</label>
+      <input type="email" name="email" placeholder="Таны имэйл">
+
+      <label data-mn="Зурвас" data-en="Message">Зурвас</label>
+      <textarea name="message" placeholder="Таны зурвас"></textarea>
+
+      <button type="submit" data-mn="Илгээх" data-en="Send">Илгээх</button>
     </form>
-  </main>
+  </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Миний Аялалын Веб</p>
     <div class="social-icons">
-      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-    </div>
-  </footer>
-
-  <script src="menu.js"></script>
-</body>
-</html>
+      <a href="#">🌐</a>
+      <a href="#">📘</a
