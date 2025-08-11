@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a.active {
+  border-bottom: 2px solid yellow;
+}
+
+#menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.destinations-list {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.destination img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 5px;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  nav {
+    display: none;
+    flex-direction: column;
+  }
+  nav.show {
+    display: flex;
+  }
+  #menu-toggle {
+    display: block;
+  }
+}
