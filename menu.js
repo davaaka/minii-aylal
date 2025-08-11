@@ -21,33 +21,19 @@ langButtons.forEach((btn) => {
 // Хэл солих функц
 function changeLanguage(lang) {
   // Энгийн текст солих
-  const textElements = document.querySelectorAll("[data-mn], [data-en]");
+  const textElements = document.querySelectorAll("[data-mn]");
   textElements.forEach((el) => {
-    if (lang === "mn" && el.dataset.mn) {
-      el.textContent = el.dataset.mn;
-    } else if (lang === "en" && el.dataset.en) {
-      el.textContent = el.dataset.en;
-    }
+    const mnText = el.getAttribute("data-mn");
+    const enText = el.getAttribute("data-en");
+    el.textContent = lang === "mn" ? mnText : enText;
   });
 
-  // Placeholder солих
-  const placeholders = document.querySelectorAll("[data-mn-placeholder], [data-en-placeholder]");
-  placeholders.forEach((el) => {
-    if (lang === "mn" && el.dataset.mnPlaceholder) {
-      el.placeholder = el.dataset.mnPlaceholder;
-    } else if (lang === "en" && el.dataset.enPlaceholder) {
-      el.placeholder = el.dataset.enPlaceholder;
-    }
-  });
-
-  // Textarea доторх анхны текст солих
-  const textareas = document.querySelectorAll("[data-mn-value], [data-en-value]");
-  textareas.forEach((el) => {
-    if (lang === "mn" && el.dataset.mnValue) {
-      el.value = el.dataset.mnValue;
-    } else if (lang === "en" && el.dataset.enValue) {
-      el.value = el.dataset.enValue;
-    }
+  // Placeholder солих (input, textarea)
+  const placeholderElements = document.querySelectorAll("[data-mn-placeholder]");
+  placeholderElements.forEach((el) => {
+    const mnPh = el.getAttribute("data-mn-placeholder");
+    const enPh = el.getAttribute("data-en-placeholder");
+    el.setAttribute("placeholder", lang === "mn" ? mnPh : enPh);
   });
 }
 
