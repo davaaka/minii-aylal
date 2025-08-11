@@ -137,9 +137,4 @@ footer {
   padding: 10px;
   margin-top: 20px;
 }
-/* Content Center */
-main, section {
-  max-width: 1200px; /* Дээд өргөн */
-  margin: 0 auto; /* Төвд нь байрлуулна */
-  padding: 20px;
-}
+
