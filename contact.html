@@ -3,56 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-mn="Холбоо барих" data-en="Contact Us">Холбоо барих</title>
+  <title>Холбоо барих - Монгол аялал</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <button id="menu-toggle">☰</button>
-    <nav>
-      <ul>
-        <li><a href="index.html" data-mn="Нүүр" data-en="Home">Нүүр</a></li>
-        <li><a href="destinations.html" data-mn="Аяллын чиглэлүүд" data-en="Destinations">Аяллын чиглэлүүд</a></li>
-        <li><a href="contact.html" class="active" data-mn="Холбоо барих" data-en="Contact">Холбоо барих</a></li>
-      </ul>
-    </nav>
 
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+      <h1 id="site-title">Монгол аялал</h1>
+    </div>
+
+    <!-- Language Switch -->
     <div id="lang-switch">
       <button data-lang="mn" class="active">MN</button>
       <button data-lang="en">EN</button>
     </div>
+
+    <!-- Menu -->
+    <div id="menu-toggle">☰</div>
+    <nav>
+      <a href="index.html" data-mn="Нүүр" data-en="Home">Нүүр</a>
+      <a href="destinations.html" data-mn="Очих газрууд" data-en="Destinations">Очих газрууд</a>
+      <a href="contact.html" class="active" data-mn="Холбоо барих" data-en="Contact">Холбоо барих</a>
+    </nav>
   </header>
 
-  <main>
-    <section>
-      <h1 data-mn="Бидэнтэй холбогдох" data-en="Get in Touch">Бидэнтэй холбогдох</h1>
-      <p data-mn="Асуулт, санал байвал доорх маягтыг бөглөнө үү."
-         data-en="If you have any questions or suggestions, please fill out the form below.">
-         Асуулт, санал байвал доорх маягтыг бөглөнө үү.
-      </p>
+  <!-- Contact Form -->
+  <section class="contact">
+    <h2 data-mn="Бидэнтэй холбоо барих" data-en="Contact Us">Бидэнтэй холбоо барих</h2>
+    <form>
+      <input type="text" 
+             data-mn-placeholder="Таны нэр" 
+             data-en-placeholder="Your Name" 
+             placeholder="Таны нэр">
+      <input type="email" 
+             data-mn-placeholder="Таны имэйл" 
+             data-en-placeholder="Your Email" 
+             placeholder="Таны имэйл">
+      <textarea data-mn-placeholder="Таны мессеж" 
+                data-en-placeholder="Your Message" 
+                placeholder="Таны мессеж"></textarea>
+      <button type="submit" data-mn="Илгээх" data-en="Send">Илгээх</button>
+    </form>
+  </section>
 
-      <form>
-        <label data-mn="Таны нэр" data-en="Your Name">Таны нэр</label>
-        <input type="text" 
-               data-mn-placeholder="Нэрээ оруулна уу" 
-               data-en-placeholder="Enter your name">
-
-        <label data-mn="Таны и-мэйл" data-en="Your Email">Таны и-мэйл</label>
-        <input type="email" 
-               data-mn-placeholder="И-мэйлээ оруулна уу" 
-               data-en-placeholder="Enter your email">
-
-        <label data-mn="Таны мессеж" data-en="Your Message">Таны мессеж</label>
-        <textarea rows="5"
-                  data-mn-placeholder="Мессежээ бичнэ үү" 
-                  data-en-placeholder="Write your message"></textarea>
-
-        <button type="submit" 
-                data-mn="Илгээх" 
-                data-en="Send">Илгээх</button>
-      </form>
-    </section>
-  </main>
+  <!-- Footer -->
+  <footer>
+    <div class="social-icons">
+      <a href="#">🌐</a>
+      <a href="#">📘</a>
+      <a href="#">📸</a>
+    </div>
+    <p>© 2025 Монгол аялал</p>
+  </footer>
 
   <script src="menu.js"></script>
 </body>
