@@ -80,3 +80,46 @@ footer {
     display: block;
   }
 }
+/* Хэл солих toggle контейнер */
+#lang-switch {
+  display: inline-flex;
+  background: #1a1a1a;
+  border-radius: 999px;
+  padding: 4px;
+  gap: 4px;
+  align-items: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+}
+
+/* Toggle товч */
+#lang-switch button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #cfcfcf;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 160ms ease;
+  font-size: 0.9rem;
+}
+
+/* Идэвхтэй тал */
+#lang-switch button.active {
+  background: linear-gradient(90deg,#222, #111);
+  color: #ffd700;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6), inset 0 -2px 0 rgba(0,0,0,0.2);
+  transform: translateY(-1px);
+}
+
+#lang-switch button:hover {
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  #lang-switch button {
+    padding: 6px 8px;
+    font-size: 0.85rem;
+  }
+}
